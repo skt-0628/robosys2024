@@ -156,6 +156,9 @@ if __name__ == "__main__":
 このプロジェクトは、**BSD 2-Clause License**（Modified BSD License）のもとで公開されています。詳しくは [LICENSE](LICENSE) をご覧ください。
 
 ##著者
+
 坂田拓海
+
 Email:no4nixs20@gmail.com
+
 GitHub:skt-0628
