@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def show_menu():
     print("\n---　四則演算 ---")
     print("1.足し算（＋）")
