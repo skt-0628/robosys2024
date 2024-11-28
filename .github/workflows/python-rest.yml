@@ -22,7 +22,8 @@ jobs:
           python-version: '3.10'
 
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$(pwd)/src" >> $GITHUB_ENV
+        run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+
 
       - name: Install dependencies
         run: |
