@@ -1,5 +1,5 @@
 import unittest
-from src.computer import add, subtract, multiply, divide
+from computer import add, subtract, multiply, divide
 
 class TestComputer(unittest.TestCase):
     # Test for addition
