@@ -1,4 +1,6 @@
-name: Python Tests
+name: Set PYTHONPATH
+run: echo "PYTHONPATH=$(pwd)/src" >> $GITHUB_ENV
+
 
 on:
   push:
