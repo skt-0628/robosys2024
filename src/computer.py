@@ -10,6 +10,22 @@ def show_menu():
     print("--------------")
 
 
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "エラー: ０で割ることはできません"
+    return x / y
+
+
+
 def perform_operation(choice, num1, num2):
     if choice == 1:
         return num1 + num2
