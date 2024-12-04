@@ -10,33 +10,33 @@ ng () {
 res=0
 
 # テストケース1: 足し算
-out=$(echo 3 2 | python3 ./src/computer.py add)
-[ "${out}" = "5.0" ] || ng "$LINENO"
+out=$(echo "add 3 4" | python3 ./src/computer.py)
+[ "${out}" = "7.0" ] || ng "$LINENO"
 
 # テストケース2: 引き算
-out=$(echo 5 2 | python3 ./src/computer.py subtract)
-[ "${out}" = "3.0" ] || ng "$LINENO"
+out=$(echo "subtract 10 3" | python3 ./src/computer.py)
+[ "${out}" = "7.0" ] || ng "$LINENO"
 
 # テストケース3: 掛け算
-out=$(echo 2 3 | python3 ./src/computer.py multiply)
-[ "${out}" = "6.0" ] || ng "$LINENO"
+out=$(echo "multiply 2 5" | python3 ./src/computer.py)
+[ "${out}" = "10.0" ] || ng "$LINENO"
 
 # テストケース4: 割り算
-out=$(echo 6 3 | python3 ./src/computer.py divide)
-[ "${out}" = "2.0" ] || ng "$LINENO"
+out=$(echo "divide 9 3" | python3 ./src/computer.py)
+[ "${out}" = "3.0" ] || ng "$LINENO"
 
-# テストケース5: ０で割る
-out=$(echo 5 0 | python3 ./src/computer.py divide)
-[ "$?" = 1 ] || ng "$LINENO"
+# テストケース5: 0で割る
+out=$(echo "divide 5 0" | python3 ./src/computer.py)
+[ "${out}" = "エラー: ０で割ることはできません" ] || ng "$LINENO"
 
-# テストケース6: 数字以外の入力
-out=$(echo 5 a | python3 ./src/computer.py add)
-[ "$?" = 1 ] || ng "$LINENO"
+# テストケース6: 無効な操作
+out=$(echo "mod 5 2" | python3 ./src/computer.py)
+[ "${out}" = "エラー: 有効な操作は 'add', 'subtract', 'multiply', 'divide' のいずれかです" ] || ng "$LINENO"
 
-# テストケース7: 空の入力
-out=$(echo | python3 ./src/computer.py add)
-[ "$?" = 1 ] || ng "$LINENO"
+# テストケース7: 無効な入力
+out=$(echo "add a b" | python3 ./src/computer.py)
+[ "${out}" = "エラー: 数値1と数値2は有効な数値である必要があります" ] || ng "$LINENO"
 
-[ "${res}" = 0 ] && echo OK
+[ "${res}" = 0 ] && echo "OK"
 exit $res
 
