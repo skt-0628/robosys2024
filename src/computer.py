@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Takumi Sakata
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 def show_menu():
     print("\n---　四則演算 ---")
