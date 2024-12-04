@@ -30,12 +30,13 @@ out=$(echo "divide 5 0" | python3 ./src/computer.py)
 [ "${out}" = "エラー: ０で割ることはできません" ] || ng "$LINENO"
 
 # テストケース6: 無効な操作
-out=$(echo "mod 5 2" | python3 ./src/computer.py)
+out=$(echo "mod 5 2" | python3 ./src/computer.py 2>&1)
 [ "${out}" = "エラー: 有効な操作は 'add', 'subtract', 'multiply', 'divide' のいずれかです" ] || ng "$LINENO"
 
 # テストケース7: 無効な入力
-out=$(echo "add a b" | python3 ./src/computer.py)
+out=$(echo "add a b" | python3 ./src/computer.py 2>&1)
 [ "${out}" = "エラー: 数値1と数値2は有効な数値である必要があります" ] || ng "$LINENO"
+
 
 [ "${res}" = 0 ] && echo "OK"
 exit $res
