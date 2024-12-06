@@ -20,7 +20,6 @@ computer.pyは、四則演算（足し算、引き算、掛け算、割り算）
 
 ```
 sudo apt install git
-
 ```
 
 2.リポジトリをクローンします。
@@ -35,7 +34,6 @@ git clone https://github.com/skt-0628/robosys2024.git
 ```
 cd robosys2024/src
 chmod +x computer.py
-
 ```
 
 ### 実行方法
@@ -43,17 +41,13 @@ chmod +x computer.py
 以下のコマンドで実行します。
 
 ```
-
 echo "add 3 4" | ./computer.py
-
 ```
 
 結果
 
 ```
-
 7.0
-
 ```
 
 操作方法ガイド
@@ -73,10 +67,8 @@ echo "add 3 4" | ./computer.py
 
 
 ```
-
 echo "divide 5 0" | ./computer.py
 エラー: ０で割ることはできません
-
 ```
 
 # ライセンス
